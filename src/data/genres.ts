@@ -39,6 +39,8 @@ export const genres: Genre[] = [
     demoType: 'platformer',
     sourceNotes: commonSources,
     accent: '#f97316',
+    imageUrl:
+      'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'shooter',
@@ -60,6 +62,8 @@ export const genres: Genre[] = [
     demoType: 'shooter',
     sourceNotes: commonSources,
     accent: '#38bdf8',
+    imageUrl:
+      'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'puzzle',
@@ -81,6 +85,8 @@ export const genres: Genre[] = [
     demoType: 'puzzle',
     sourceNotes: commonSources,
     accent: '#22c55e',
+    imageUrl:
+      'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'rpg',
@@ -102,6 +108,8 @@ export const genres: Genre[] = [
     demoType: 'rpg',
     sourceNotes: commonSources,
     accent: '#a855f7',
+    imageUrl:
+      'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'strategy',
@@ -123,6 +131,8 @@ export const genres: Genre[] = [
     demoType: 'strategy',
     sourceNotes: commonSources,
     accent: '#14b8a6',
+    imageUrl:
+      'https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'racing',
@@ -144,6 +154,8 @@ export const genres: Genre[] = [
     demoType: 'racing',
     sourceNotes: commonSources,
     accent: '#ef4444',
+    imageUrl:
+      'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'sports',
@@ -165,6 +177,8 @@ export const genres: Genre[] = [
     demoType: 'sports',
     sourceNotes: commonSources,
     accent: '#eab308',
+    imageUrl:
+      'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'simulation',
@@ -186,6 +200,8 @@ export const genres: Genre[] = [
     demoType: 'simulation',
     sourceNotes: commonSources,
     accent: '#0ea5e9',
+    imageUrl:
+      'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?auto=format&fit=crop&w=1200&q=80',
   },
 ];
 

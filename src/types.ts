@@ -32,4 +32,5 @@ export type Genre = {
   demoType: DemoType;
   sourceNotes: SourceNote[];
   accent: string;
+  imageUrl: string;
 };

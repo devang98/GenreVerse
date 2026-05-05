@@ -1,4 +1,15 @@
-import { ArrowRight, Gamepad2 } from 'lucide-react';
+import {
+  ArrowRight,
+  Blocks,
+  BrainCircuit,
+  Car,
+  Crosshair,
+  Gamepad2,
+  Goal,
+  Map,
+  Orbit,
+  PersonStanding,
+} from 'lucide-react';
 import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import type { Genre } from '../types';
@@ -7,18 +18,31 @@ type GenreCardProps = {
   genre: Genre;
 };
 
+const genreIcons: Record<string, typeof Gamepad2> = {
+  platformer: PersonStanding,
+  shooter: Crosshair,
+  puzzle: Blocks,
+  rpg: BrainCircuit,
+  strategy: Map,
+  racing: Car,
+  sports: Goal,
+  simulation: Orbit,
+};
+
 export function GenreCard({ genre }: GenreCardProps) {
+  const Icon = genreIcons[genre.id] ?? Gamepad2;
+
   return (
     <article className="genre-card" style={{ '--accent': genre.accent } as CSSProperties}>
-      <div className="genre-card-visual" aria-hidden="true">
-        <span />
-        <span />
-        <span />
+      <div className="genre-card-image" aria-hidden="true">
+        <img src={genre.imageUrl} alt="" loading="lazy" />
       </div>
       <div className="relative z-10 flex h-full flex-col">
         <div className="flex items-center justify-between gap-3">
           <p className="eyebrow">Genre</p>
-          <Gamepad2 className="text-white/40" size={20} aria-hidden="true" />
+          <span className="genre-card-icon">
+            <Icon size={20} aria-hidden="true" />
+          </span>
         </div>
         <h2 className="mt-5 text-2xl font-black text-white">{genre.name}</h2>
         <p className="mt-3 text-sm leading-6 text-slate-400">{genre.shortDescription}</p>

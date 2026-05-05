@@ -1,25 +1,51 @@
-import { ExternalLink } from 'lucide-react';
+import { Compass, ExternalLink, Gamepad2, Tags } from 'lucide-react';
 import { sourceLinks } from '../data/genres';
 
 export function AboutTaxonomy() {
   return (
-    <section className="mx-auto max-w-5xl px-5 py-14">
-      <p className="eyebrow">Taxonomy notes</p>
-      <h1 className="mt-4 text-4xl font-black text-slate-950 md:text-6xl">
-        Genres here are gameplay-first.
-      </h1>
-      <div className="mt-8 grid gap-6 text-lg leading-8 text-slate-700">
-        <p>
-          This MVP follows the common design distinction that video game genres are primarily
-          classified by how they play. That is why Platformer, Shooter, Puzzle, RPG, Strategy,
-          Racing, Sports, and Simulation are treated as first-class library entries.
-        </p>
-        <p>
-          Labels such as horror, fantasy, sandbox, open world, sci-fi, and competitive are useful,
-          but they usually describe theme, structure, presentation, or mode. The app stores them as
-          related tags so a later version can support richer browsing without flattening everything
-          into one confusing list.
-        </p>
+    <section className="mx-auto max-w-6xl px-5 py-12 md:py-16">
+      <div className="taxonomy-hero">
+        <div>
+          <p className="eyebrow">Taxonomy notes</p>
+          <h1 className="mt-4 text-4xl font-black text-white md:text-6xl">
+            Genres here are gameplay-first.
+          </h1>
+          <div className="mt-8 grid gap-6 text-lg leading-8 text-slate-300">
+            <p>
+              This MVP follows the common design distinction that video game genres are primarily
+              classified by how they play. That is why Platformer, Shooter, Puzzle, RPG, Strategy,
+              Racing, Sports, and Simulation are treated as first-class library entries.
+            </p>
+            <p>
+              Labels such as horror, fantasy, sandbox, open world, sci-fi, and competitive are
+              useful, but they usually describe theme, structure, presentation, or mode. The app
+              stores them as related tags so a later version can support richer browsing without
+              flattening everything into one confusing list.
+            </p>
+          </div>
+        </div>
+        <img
+          alt="Player holding a game controller"
+          src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=1200&q=80"
+        />
+      </div>
+
+      <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="taxonomy-principle">
+          <Gamepad2 size={24} aria-hidden="true" />
+          <h2>Play first</h2>
+          <p>Primary labels describe what the player repeatedly does.</p>
+        </div>
+        <div className="taxonomy-principle">
+          <Tags size={24} aria-hidden="true" />
+          <h2>Tags second</h2>
+          <p>Theme and presentation stay searchable without becoming the whole taxonomy.</p>
+        </div>
+        <div className="taxonomy-principle">
+          <Compass size={24} aria-hidden="true" />
+          <h2>Expandable</h2>
+          <p>The static data model can grow into richer source-backed browsing later.</p>
+        </div>
       </div>
 
       <div className="mt-10 grid gap-4">

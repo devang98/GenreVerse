@@ -1,4 +1,4 @@
-import { Search, SlidersHorizontal } from 'lucide-react';
+import { Compass, Gamepad2, MousePointer2, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { GenreCard } from '../components/GenreCard';
 import { genres } from '../data/genres';
@@ -40,23 +40,51 @@ export function Home() {
 
   return (
     <>
-      <section className="relative overflow-hidden py-24 md:py-36">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800/40 via-[#09090b] to-[#09090b]" />
-        <div className="relative mx-auto max-w-7xl px-5 text-center">
-          <p className="eyebrow mx-auto mb-8 bg-white/5 border-white/10 text-slate-300">Playable taxonomy</p>
-          <h1 className="font-display mx-auto max-w-5xl text-6xl font-black uppercase leading-[1.05] tracking-tight text-white md:text-8xl lg:text-9xl">
-            Genre<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-indigo-500 to-purple-500">
-              Verse
-            </span>
-          </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg font-light text-slate-400 md:text-xl md:leading-relaxed">
-            A hands-on guide to the major ways games ask people to think, move, choose, and compete. Every entry pairs a plain-language explanation with a focused interactive sample.
-          </p>
+      <section className="library-hero">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.02fr_0.98fr] md:items-center md:py-20">
+          <div className="relative z-10">
+            <p className="eyebrow mb-6">Playable taxonomy</p>
+            <h1 className="font-display max-w-4xl text-5xl font-black uppercase leading-[1.02] text-slate-950 md:text-7xl lg:text-8xl">
+              Explore game genres by feel, rules, and play.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700 md:text-xl">
+              GenreVerse is a hands-on guide to the major ways games ask people to move, aim,
+              solve, plan, compete, and build. Each entry pairs clear taxonomy notes with a focused
+              mini interaction.
+            </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="hero-stat">
+                <Gamepad2 size={20} aria-hidden="true" />
+                <strong>8</strong>
+                <span>playable genres</span>
+              </div>
+              <div className="hero-stat">
+                <MousePointer2 size={20} aria-hidden="true" />
+                <strong>8</strong>
+                <span>mini demos</span>
+              </div>
+              <div className="hero-stat">
+                <Compass size={20} aria-hidden="true" />
+                <strong>4</strong>
+                <span>research sources</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-media" aria-label="Gaming setup image">
+            <img
+              alt="Neon-lit gaming controller and arcade setup"
+              src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1400&q=80"
+            />
+            <div className="hero-media-card">
+              <Sparkles size={18} aria-hidden="true" />
+              <span>Search by mechanic, famous game, or mood tag</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-8">
+      <section className="mx-auto max-w-7xl px-5 py-10">
         <div className="flex flex-col gap-4 border-y border-white/10 py-5 md:flex-row md:items-center md:justify-between">
           <label className="search-field">
             <Search size={19} aria-hidden="true" />

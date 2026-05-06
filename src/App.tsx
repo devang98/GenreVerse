@@ -26,7 +26,7 @@ function NotFound() {
         This route has not unlocked yet.
       </h1>
       <p className="mt-5 text-lg text-slate-600">
-        The genre library has eight playable entries in this MVP. Head back to the library and pick a genre card.
+        The genre library has nine playable entries in this MVP. Head back to the library and pick a genre card.
       </p>
     </section>
   );

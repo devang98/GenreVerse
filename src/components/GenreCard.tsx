@@ -9,6 +9,7 @@ import {
   Map,
   Orbit,
   PersonStanding,
+  Shield,
 } from 'lucide-react';
 import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
@@ -27,6 +28,7 @@ const genreIcons: Record<string, typeof Gamepad2> = {
   racing: Car,
   sports: Goal,
   simulation: Orbit,
+  soulslike: Shield,
 };
 
 export function GenreCard({ genre }: GenreCardProps) {

@@ -33,11 +33,16 @@ export function GenreCard({ genre }: GenreCardProps) {
   const Icon = genreIcons[genre.id] ?? Gamepad2;
 
   return (
-    <article className="genre-card" style={{ '--accent': genre.accent } as CSSProperties}>
+    <Link
+      aria-label={`Open ${genre.name} genre`}
+      className="genre-card"
+      style={{ '--accent': genre.accent } as CSSProperties}
+      to={`/genres/${genre.id}`}
+    >
       <div className="genre-card-image" aria-hidden="true">
         <img src={genre.imageUrl} alt="" loading="lazy" />
       </div>
-      <div className="relative z-10 flex h-full flex-col">
+      <div className="relative z-10 flex h-full w-full flex-col">
         <div className="flex items-center justify-between gap-3">
           <p className="eyebrow">Genre</p>
           <span className="genre-card-icon">
@@ -54,12 +59,12 @@ export function GenreCard({ genre }: GenreCardProps) {
           ))}
         </div>
         <div className="mt-auto pt-7">
-          <Link className="inline-flex items-center gap-2 text-sm font-bold text-white transition-colors hover:text-slate-300" to={`/genres/${genre.id}`}>
+          <span className="genre-card-cta">
             Open genre
             <ArrowRight size={16} aria-hidden="true" />
-          </Link>
+          </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

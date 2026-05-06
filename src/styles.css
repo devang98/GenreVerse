@@ -473,7 +473,8 @@ input:focus-visible,
 .strategy-map,
 .racing-track,
 .sports-court,
-.city-grid {
+.city-grid,
+.soulslike-stage {
   position: relative;
   min-height: 18rem;
   overflow: hidden;
@@ -857,6 +858,117 @@ input:focus-visible,
   accent-color: var(--accent);
 }
 
+.soulslike-stage {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 72% 30%, rgba(244, 63, 94, 0.24), transparent 22%),
+    #17131d;
+  background-size: 46px 46px, 46px 46px, auto, auto;
+}
+
+.soulslike-stage::after {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 3rem;
+  left: 1.2rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgba(226, 232, 240, 0.8);
+  content: "";
+}
+
+.soulslike-hero,
+.soulslike-boss,
+.soulslike-bonfire {
+  position: absolute;
+  z-index: 1;
+}
+
+.soulslike-hero {
+  bottom: 3.6rem;
+  left: 18%;
+  width: 2.6rem;
+  height: 3.4rem;
+  border-radius: 0.35rem 0.35rem 0.18rem 0.18rem;
+  background: #e2e8f0;
+  box-shadow: 1.9rem 0.2rem 0 -1.55rem #f43f5e;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.soulslike-hero.is-exhausted {
+  opacity: 0.62;
+  transform: translateY(0.35rem);
+}
+
+.soulslike-boss {
+  right: 19%;
+  bottom: 3.6rem;
+  width: 4.2rem;
+  height: 5.4rem;
+  border-radius: 0.55rem 0.55rem 0.2rem 0.2rem;
+  background: #f43f5e;
+  box-shadow: 0 0 0 0.45rem rgba(244, 63, 94, 0.22);
+}
+
+.soulslike-boss::before {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  width: 0.5rem;
+  height: 2rem;
+  transform: translateX(-50%) rotate(22deg);
+  border-radius: 999px;
+  background: #f8fafc;
+  content: "";
+}
+
+.soulslike-bonfire {
+  bottom: 3.6rem;
+  left: 48%;
+  width: 1.4rem;
+  height: 3rem;
+  border-radius: 999px 999px 0.2rem 0.2rem;
+  background: linear-gradient(180deg, #fbbf24, #f43f5e 70%, #475569);
+  box-shadow: 0 0 1.6rem rgba(251, 191, 36, 0.52);
+}
+
+.bloodstain {
+  position: absolute;
+  bottom: 4.15rem;
+  left: 34%;
+  z-index: 2;
+  min-height: 2.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 0.45rem;
+  background: rgba(244, 63, 94, 0.85);
+  padding: 0 0.75rem;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.soulslike-meters {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.soulslike-meters p {
+  margin-bottom: 0.35rem;
+  color: #f8fafc;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.stamina-meter span {
+  background: #22c55e;
+}
+
+.posture-meter span {
+  background: #f43f5e;
+}
+
 .library-hero {
   min-height: calc(100vh - 7rem);
   display: grid;
@@ -1194,6 +1306,7 @@ input:focus-visible,
   .racing-track,
   .sports-court,
   .city-grid,
+  .soulslike-stage,
   .puzzle-board {
     min-height: 15rem;
   }

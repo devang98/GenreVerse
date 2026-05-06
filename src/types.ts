@@ -6,7 +6,8 @@ export type DemoType =
   | 'strategy'
   | 'racing'
   | 'sports'
-  | 'simulation';
+  | 'simulation'
+  | 'soulslike';
 
 export type FamousGame = {
   title: string;

@@ -7,10 +7,10 @@ const filters = ['All', 'Action', 'Planning', 'Systems', 'Precision'];
 
 const filterMatcher: Record<string, (genreId: string) => boolean> = {
   All: () => true,
-  Action: (id) => ['platformer', 'shooter', 'racing', 'sports'].includes(id),
-  Planning: (id) => ['puzzle', 'rpg', 'strategy'].includes(id),
-  Systems: (id) => ['rpg', 'strategy', 'simulation'].includes(id),
-  Precision: (id) => ['platformer', 'shooter', 'racing', 'sports'].includes(id),
+  Action: (id) => ['platformer', 'shooter', 'racing', 'sports', 'soulslike'].includes(id),
+  Planning: (id) => ['puzzle', 'rpg', 'strategy', 'soulslike'].includes(id),
+  Systems: (id) => ['rpg', 'strategy', 'simulation', 'soulslike'].includes(id),
+  Precision: (id) => ['platformer', 'shooter', 'racing', 'sports', 'soulslike'].includes(id),
 };
 
 export function Home() {
@@ -55,12 +55,12 @@ export function Home() {
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               <div className="hero-stat">
                 <Gamepad2 size={20} aria-hidden="true" />
-                <strong>8</strong>
+                <strong>{genres.length}</strong>
                 <span>playable genres</span>
               </div>
               <div className="hero-stat">
                 <MousePointer2 size={20} aria-hidden="true" />
-                <strong>8</strong>
+                <strong>{genres.length}</strong>
                 <span>mini demos</span>
               </div>
               <div className="hero-stat">

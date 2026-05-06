@@ -8,8 +8,8 @@ The project treats genres as gameplay-centered categories. Themes and presentati
 
 - Searchable and filterable genre library
 - Responsive image-backed hero, genre cards, and detail pages
-- Eight curated genre entries: Platformer, Shooter, Puzzle, Role-playing Game, Strategy, Racing, Sports, and Simulation
-- Mini playable demos for core mechanics such as jumping, target clicking, tile swapping, dialogue choices, unit selection, lane changes, timing shots, and simulation sliders
+- Nine curated genre entries: Platformer, Shooter, Puzzle, Role-playing Game, Strategy, Racing, Sports, Simulation, and Souls Like
+- Mini playable demos for core mechanics such as jumping, target clicking, tile swapping, dialogue choices, unit selection, lane changes, timing shots, simulation sliders, and soulslike stamina/recovery
 - Genre detail pages with overview, player fantasy, core mechanics, famous games, subgenres, related tags, and references
 - Taxonomy notes page explaining the gameplay-first classification model
 - Accessible keyboard focus states and responsive layouts for mobile, tablet, and desktop

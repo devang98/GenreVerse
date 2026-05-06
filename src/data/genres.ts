@@ -18,6 +18,18 @@ const commonSources = [
   },
 ];
 
+const soulslikeSources = [
+  ...commonSources,
+  {
+    label: 'Wikipedia: Soulslike',
+    url: 'https://en.wikipedia.org/wiki/Soulslike',
+  },
+  {
+    label: 'Gameopedia: Difficulty, Deception and Death: The Design of a Souls-Like',
+    url: 'https://gameopedia.com/blogs/difficulty-deception-and-death-the-design-of-a-souls-like',
+  },
+];
+
 export const genres: Genre[] = [
   {
     id: 'platformer',
@@ -202,6 +214,35 @@ export const genres: Genre[] = [
     accent: '#0ea5e9',
     imageUrl:
       'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 'soulslike',
+    name: 'Souls Like',
+    shortDescription:
+      'Methodical action RPGs about stamina, pattern reading, harsh death loops, and earned mastery.',
+    fullDescription:
+      'Souls like games are usually action RPGs built around deliberate combat, dangerous worlds, sparse checkpoints, and learning through failure. The player studies enemy timing, commits to attacks, manages stamina and healing, then risks lost currency or progress on the path back from defeat.',
+    playerFantasy:
+      'Hard-won mastery: the player survives because they learned the world, not because the world became harmless.',
+    coreMechanics: [
+      'Stamina and animation commitment',
+      'Dodge, guard, or parry timing',
+      'Bonfire-style checkpoints',
+      'Death recovery loop',
+      'Boss pattern learning',
+    ],
+    famousGames: [
+      { title: 'Demon\'s Souls', year: 2009, note: 'Established many of the subgenre\'s modern foundations.' },
+      { title: 'Dark Souls', year: 2011, note: 'Popularized bonfire checkpoints, corpse-run recovery, and interconnected world design.' },
+      { title: 'Elden Ring', year: 2022, note: 'Expanded soulslike combat and progression into a broad open-world structure.' },
+    ],
+    subgenres: ['Action RPG soulslike', '2D soulslike', 'Soulsborne', 'Boss-rush soulslike'],
+    relatedTags: ['High difficulty', 'Stamina combat', 'Dark fantasy', 'Environmental storytelling'],
+    demoType: 'soulslike',
+    sourceNotes: soulslikeSources,
+    accent: '#f43f5e',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?auto=format&fit=crop&w=1200&q=80',
   },
 ];
 

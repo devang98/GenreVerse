@@ -27,6 +27,7 @@ export function MiniDemo({ genre }: MiniDemoProps) {
         {genre.demoType === 'racing' && <RacingDemo />}
         {genre.demoType === 'sports' && <SportsDemo />}
         {genre.demoType === 'simulation' && <SimulationDemo />}
+        {genre.demoType === 'soulslike' && <SoulslikeDemo />}
       </div>
     </section>
   );
@@ -308,6 +309,113 @@ function SimulationDemo() {
         <Slider label="Transit" value={transit} onChange={setTransit} />
       </div>
       <p className="demo-score">City stability: {cityScore}%</p>
+    </div>
+  );
+}
+
+function SoulslikeDemo() {
+  const [stamina, setStamina] = useState(100);
+  const [enemyGuard, setEnemyGuard] = useState(74);
+  const [souls, setSouls] = useState(420);
+  const [lostSouls, setLostSouls] = useState(0);
+  const [message, setMessage] = useState('Read the opening. Commit when stamina is ready.');
+  const exhausted = stamina < 22;
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setStamina((value) => Math.min(100, value + 5));
+      setEnemyGuard((value) => Math.min(100, value + 3));
+    }, 300);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  function strike() {
+    if (exhausted) {
+      setMessage('Too winded. Step back and let stamina return.');
+      return;
+    }
+
+    const nextGuard = Math.max(0, enemyGuard - 28);
+    setStamina((value) => Math.max(0, value - 24));
+    setEnemyGuard(nextGuard);
+    if (nextGuard === 0) {
+      setSouls((value) => value + 120);
+      setEnemyGuard(100);
+      setMessage('Posture broken. The next route opens.');
+      return;
+    }
+
+    setMessage('Hit landed. Watch the counter swing.');
+  }
+
+  function dodge() {
+    if (stamina < 16) {
+      setMessage('No roll left. Greed got punished.');
+      return;
+    }
+
+    setStamina((value) => Math.max(0, value - 16));
+    setMessage('Clean dodge. Small window earned.');
+  }
+
+  function fall() {
+    setLostSouls(souls);
+    setSouls(0);
+    setStamina(100);
+    setEnemyGuard(74);
+    setMessage('You fell. Recover the dropped souls before the next mistake.');
+  }
+
+  function recover() {
+    if (lostSouls === 0) {
+      setMessage('No bloodstain waiting. Keep pushing toward the next rest point.');
+      return;
+    }
+
+    setSouls((value) => value + lostSouls);
+    setLostSouls(0);
+    setMessage('Recovered. The run is alive again.');
+  }
+
+  return (
+    <div className="demo-stack">
+      <div className="soulslike-stage">
+        <span className={`soulslike-hero ${exhausted ? 'is-exhausted' : ''}`} />
+        <span className="soulslike-boss" />
+        <span className="soulslike-bonfire" />
+        {lostSouls > 0 && <button className="bloodstain" onClick={recover} type="button">Recover</button>}
+      </div>
+
+      <div className="soulslike-meters">
+        <div>
+          <p>Stamina</p>
+          <div className="meter stamina-meter">
+            <span style={{ width: `${stamina}%` }} />
+          </div>
+        </div>
+        <div>
+          <p>Enemy posture</p>
+          <div className="meter posture-meter">
+            <span style={{ width: `${enemyGuard}%` }} />
+          </div>
+        </div>
+      </div>
+
+      <div className="demo-actions">
+        <button className="primary-action" onClick={strike} type="button">
+          <Zap size={18} aria-hidden="true" />
+          Strike
+        </button>
+        <button className="secondary-action" onClick={dodge} type="button">
+          Dodge
+        </button>
+        <button className="secondary-action" onClick={fall} type="button">
+          Fall
+        </button>
+        <p className="demo-score">Souls: {souls} {lostSouls > 0 ? `| dropped: ${lostSouls}` : ''}</p>
+      </div>
+
+      <p className="demo-score">{message}</p>
     </div>
   );
 }

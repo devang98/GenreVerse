@@ -14,7 +14,7 @@ export function AboutTaxonomy() {
             <p>
               This MVP follows the common design distinction that video game genres are primarily
               classified by how they play. That is why Platformer, Shooter, Puzzle, RPG, Strategy,
-              Racing, Sports, and Simulation are treated as first-class library entries.
+              Racing, Sports, Simulation, and Souls Like are treated as first-class library entries.
             </p>
             <p>
               Labels such as horror, fantasy, sandbox, open world, sci-fi, and competitive are

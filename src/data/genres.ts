@@ -212,8 +212,7 @@ export const genres: Genre[] = [
     demoType: 'simulation',
     sourceNotes: commonSources,
     accent: '#0ea5e9',
-    imageUrl:
-      'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/genre-simulation.svg',
   },
   {
     id: 'soulslike',
@@ -241,8 +240,7 @@ export const genres: Genre[] = [
     demoType: 'soulslike',
     sourceNotes: soulslikeSources,
     accent: '#f43f5e',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/genre-soulslike.svg',
   },
 ];
 

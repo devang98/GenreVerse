@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Souls Like genre scene</title>
+  <desc id="desc">A dark fantasy arena with a bonfire, ruined arches, and a lone warrior facing a looming boss silhouette.</desc>
+  <defs>
+    <radialGradient id="fireGlow" cx="50%" cy="76%" r="48%">
+      <stop offset="0" stop-color="#fb923c"/>
+      <stop offset="0.35" stop-color="#7f1d1d" stop-opacity="0.74"/>
+      <stop offset="1" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e1b4b"/>
+      <stop offset="0.48" stop-color="#450a0a"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2e8f0"/>
+      <stop offset="1" stop-color="#64748b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#020617" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <rect width="1200" height="800" fill="url(#fireGlow)"/>
+  <circle cx="948" cy="132" r="86" fill="#fecdd3" opacity="0.16"/>
+  <g opacity="0.54">
+    <path d="M40 620V264c0-90 72-162 162-162s162 72 162 162v356h-90V266c0-41-32-75-72-75s-72 34-72 75v354Z" fill="#0f172a"/>
+    <path d="M834 620V256c0-92 74-166 166-166s166 74 166 166v364h-92V258c0-42-33-76-74-76s-74 34-74 76v362Z" fill="#0f172a"/>
+    <path d="M362 620V326c0-70 56-126 126-126s126 56 126 126v294h-74V328c0-29-23-53-52-53s-52 24-52 53v292Z" fill="#111827"/>
+  </g>
+  <path d="M0 622c166-42 290-44 418-17 116 25 224 32 344 3 143-34 276-30 438 22v170H0Z" fill="#020617"/>
+  <path d="M0 650c138-22 251-20 386 12 153 36 278 37 446 3 122-25 229-25 368 1v134H0Z" fill="#09090b"/>
+  <g filter="url(#shadow)">
+    <ellipse cx="601" cy="661" rx="174" ry="45" fill="#7f1d1d" opacity="0.48"/>
+    <path d="M573 623c32-74 6-102 41-158 31 49 23 82 65 125 27 28 17 84-47 99-53 13-82-18-59-66Z" fill="#f97316"/>
+    <path d="M612 650c13-40-12-58 21-102 6 38 51 68 32 107-13 27-63 32-53-5Z" fill="#fde68a"/>
+    <path d="M520 686h164" stroke="#fca5a5" stroke-width="20" stroke-linecap="round" opacity="0.5"/>
+    <path d="M548 673h120" stroke="#431407" stroke-width="22" stroke-linecap="round"/>
+    <path d="M574 652h78" stroke="#78350f" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M388 557c38-88 103-132 168-132 89 0 150 66 173 181-77 32-228 32-341-49Z" fill="#111827"/>
+    <path d="M533 412c11-64 44-108 94-134-3 65 8 107 51 153-39-18-91-26-145-19Z" fill="#18181b"/>
+    <circle cx="600" cy="473" r="34" fill="#020617"/>
+    <path d="M574 473h52" stroke="#f43f5e" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M250 608c18-64 58-104 112-104s92 40 108 104c-58 28-158 28-220 0Z" fill="#0f172a"/>
+    <circle cx="360" cy="470" r="36" fill="#1f2937"/>
+    <path d="M340 508h42l17 104h-78Z" fill="#1f2937"/>
+    <path d="M401 523 514 434" stroke="url(#steel)" stroke-width="13" stroke-linecap="round"/>
+    <path d="m520 428 34-18-18 34Z" fill="#e2e8f0"/>
+    <path d="M317 545c-33 17-54 40-64 72" stroke="#334155" stroke-width="18" stroke-linecap="round"/>
+    <path d="M402 545c32 18 52 42 63 74" stroke="#334155" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <path d="M94 716c222-44 394-12 538 2 166 16 299-35 474 0" fill="none" stroke="#fb7185" stroke-width="3" opacity="0.26"/>
+</svg>

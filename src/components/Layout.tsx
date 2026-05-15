@@ -41,7 +41,7 @@ export function Layout({ children }: LayoutProps) {
 
       <footer className="border-t border-white/10 px-5 py-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-          <p>Curated MVP: 9 gameplay-centered genres with playable mechanic samples.</p>
+          <p>Curated library: 32 gameplay-centered genres with playable mechanic samples.</p>
           <p>References: local PDF, Wikipedia, MobyGames, and IGDB.</p>
         </div>
       </footer>

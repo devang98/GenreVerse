@@ -8,8 +8,8 @@ The project treats genres as gameplay-centered categories. Themes and presentati
 
 - Searchable and filterable genre library
 - Responsive image-backed hero, genre cards, and detail pages
-- Ten curated genre entries: Platformer, Shooter, Puzzle, Role-playing Game, Strategy, Racing, Sports, Fighting, Simulation, and Souls Like
-- Mini playable demos for core mechanics such as jumping, target clicking, tile swapping, dialogue choices, unit selection, lane changes, timing shots, fighting range control, simulation sliders, and soulslike stamina/recovery
+- 32 curated genre entries, from foundational categories like Platformer and RPG through specialist forms like MOBA, Deck-builder, Shmup, and Auto-battler
+- Mini playable demos for core mechanics such as jumping, target clicking, tile swapping, dialogue choices, unit selection, lane changes, timing shots, fighting range control, simulation sliders, soulslike stamina/recovery, deck tuning, resource loops, and formation planning
 - Genre detail pages with overview, player fantasy, core mechanics, famous games, subgenres, related tags, and references
 - Taxonomy notes page explaining the gameplay-first classification model
 - Accessible keyboard focus states and responsive layouts for mobile, tablet, and desktop
@@ -114,7 +114,7 @@ The current MVP content was cross-checked against:
 
 ## Future Improvements
 
-- Add more genres and subgenre pages
+- Add subgenre pages
 - Replace static image URLs with a local optimized asset pipeline
 - Add richer animation or canvas-based demos
 - Add automated visual regression checks for responsive layouts

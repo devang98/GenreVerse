@@ -28,7 +28,9 @@ export type DemoType =
   | 'dungeoncrawler'
   | 'hacknslash'
   | 'twinstickshooter'
-  | 'shmup';
+  | 'shmup'
+  | 'tradingcardgame'
+  | 'autobattler';
 
 export type FamousGame = {
   title: string;

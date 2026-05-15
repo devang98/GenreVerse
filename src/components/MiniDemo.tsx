@@ -1173,8 +1173,9 @@ function DungeonCrawlerDemo() {
 
   function descend() {
     if (enemies === 0) {
-      setDepth((d) => d + 1);
-      setEnemies(d + 1);
+      const nextDepth = depth + 1;
+      setDepth(nextDepth);
+      setEnemies(nextDepth + 1);
     }
   }
 

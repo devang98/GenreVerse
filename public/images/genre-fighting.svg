@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Fighting genre scene</title>
+  <desc id="desc">Two stylized fighters face each other in a neon arena with hit sparks, health bars, and arcade lighting.</desc>
+  <defs>
+    <linearGradient id="arena" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#581c87"/>
+      <stop offset="0.48" stop-color="#831843"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <radialGradient id="spotlight" cx="50%" cy="36%" r="52%">
+      <stop offset="0" stop-color="#f9a8d4" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#020617" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#arena)"/>
+  <rect width="1200" height="800" fill="url(#spotlight)"/>
+  <g opacity="0.3">
+    <path d="M0 188h1200M0 296h1200M0 404h1200M0 512h1200" stroke="#f8fafc" stroke-width="4"/>
+    <path d="M122 0v620M310 0v620M498 0v620M686 0v620M874 0v620M1062 0v620" stroke="#f8fafc" stroke-width="4"/>
+  </g>
+  <path d="M0 612c186-42 354-39 506 8 132 41 276 45 432 1 88-25 174-32 262-20v199H0Z" fill="#020617"/>
+  <path d="M118 654h964" stroke="#f8fafc" stroke-width="18" stroke-linecap="round" opacity="0.85"/>
+  <path d="M170 692h860" stroke="#ec4899" stroke-width="8" stroke-linecap="round" opacity="0.62"/>
+  <g filter="url(#shadow)">
+    <rect x="90" y="72" width="332" height="54" rx="14" fill="#020617" opacity="0.78"/>
+    <rect x="116" y="91" width="258" height="16" rx="8" fill="#22c55e"/>
+    <rect x="778" y="72" width="332" height="54" rx="14" fill="#020617" opacity="0.78"/>
+    <rect x="826" y="91" width="258" height="16" rx="8" fill="#f43f5e"/>
+    <rect x="526" y="64" width="148" height="72" rx="22" fill="#f8fafc"/>
+    <text x="600" y="111" fill="#0f172a" font-family="Arial, sans-serif" font-size="46" font-weight="900" text-anchor="middle">99</text>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M278 608c20-92 80-149 160-149 82 0 139 57 158 149-76 38-233 38-318 0Z" fill="#f8fafc"/>
+    <circle cx="438" cy="405" r="46" fill="#e2e8f0"/>
+    <path d="M394 462h82l26 150h-134Z" fill="#cbd5e1"/>
+    <path d="M504 492 632 444" stroke="#f8fafc" stroke-width="26" stroke-linecap="round"/>
+    <path d="M368 508c-48 29-78 64-91 110" stroke="#f8fafc" stroke-width="24" stroke-linecap="round"/>
+    <path d="M506 611c32 34 78 53 134 57" stroke="#f8fafc" stroke-width="24" stroke-linecap="round"/>
+    <path d="M386 613c-36 36-80 56-132 60" stroke="#f8fafc" stroke-width="24" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M639 608c20-92 78-149 159-149s140 57 158 149c-78 38-233 38-317 0Z" fill="#ec4899"/>
+    <circle cx="798" cy="405" r="46" fill="#f472b6"/>
+    <path d="M757 462h82l26 150h-134Z" fill="#db2777"/>
+    <path d="M733 493 622 444" stroke="#ec4899" stroke-width="26" stroke-linecap="round"/>
+    <path d="M869 508c48 29 78 64 91 110" stroke="#ec4899" stroke-width="24" stroke-linecap="round"/>
+    <path d="M735 611c-32 34-78 53-134 57" stroke="#ec4899" stroke-width="24" stroke-linecap="round"/>
+    <path d="M854 613c36 36 80 56 132 60" stroke="#ec4899" stroke-width="24" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="m600 348 34 76 82-10-58 59 26 80-84-38-84 38 26-80-58-59 82 10Z" fill="#facc15"/>
+    <path d="m600 383 17 38 41-5-29 29 13 40-42-19-42 19 13-40-29-29 41 5Z" fill="#fff7ed"/>
+  </g>
+</svg>

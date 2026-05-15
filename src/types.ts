@@ -5,6 +5,7 @@ export type DemoType =
   | 'rpg'
   | 'strategy'
   | 'racing'
+  | 'fighting'
   | 'sports'
   | 'simulation'
   | 'soulslike';

@@ -7,10 +7,10 @@ const filters = ['All', 'Action', 'Planning', 'Systems', 'Precision'];
 
 const filterMatcher: Record<string, (genreId: string) => boolean> = {
   All: () => true,
-  Action: (id) => ['platformer', 'shooter', 'racing', 'sports', 'soulslike'].includes(id),
+  Action: (id) => ['platformer', 'shooter', 'racing', 'sports', 'fighting', 'soulslike'].includes(id),
   Planning: (id) => ['puzzle', 'rpg', 'strategy', 'soulslike'].includes(id),
   Systems: (id) => ['rpg', 'strategy', 'simulation', 'soulslike'].includes(id),
-  Precision: (id) => ['platformer', 'shooter', 'racing', 'sports', 'soulslike'].includes(id),
+  Precision: (id) => ['platformer', 'shooter', 'racing', 'sports', 'fighting', 'soulslike'].includes(id),
 };
 
 export function Home() {

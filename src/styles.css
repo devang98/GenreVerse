@@ -473,6 +473,7 @@ input:focus-visible,
 .strategy-map,
 .racing-track,
 .sports-court,
+.fighting-stage,
 .city-grid,
 .soulslike-stage {
   position: relative;
@@ -806,6 +807,82 @@ input:focus-visible,
 
 .sports-meter span {
   background: linear-gradient(90deg, #ef4444, #eab308 45%, #22c55e 60%, #ef4444);
+}
+
+.fighting-stage {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+    radial-gradient(circle at 50% 28%, rgba(236, 72, 153, 0.25), transparent 26%),
+    #211329;
+  background-size: 54px 54px, auto, auto;
+}
+
+.fighting-stage::after {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 3.2rem;
+  left: 1.1rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: #f8fafc;
+  content: "";
+}
+
+.fighter,
+.hit-spark {
+  position: absolute;
+  z-index: 1;
+}
+
+.fighter {
+  bottom: 3.7rem;
+  width: 2.9rem;
+  height: 4.6rem;
+  transform: translateX(-50%);
+  border-radius: 0.5rem 0.5rem 0.22rem 0.22rem;
+  transition: left 170ms ease;
+}
+
+.fighter::before {
+  position: absolute;
+  top: -1.15rem;
+  left: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: inherit;
+  content: "";
+}
+
+.fighter-player {
+  background: #f8fafc;
+  box-shadow: 1.9rem 0.65rem 0 -1.5rem #ec4899;
+}
+
+.fighter-rival {
+  background: #ec4899;
+  box-shadow: -1.9rem 0.65rem 0 -1.5rem #f8fafc;
+}
+
+.hit-spark {
+  bottom: 7.1rem;
+  left: 50%;
+  width: 2.6rem;
+  height: 2.6rem;
+  transform: translateX(-50%) rotate(45deg) scale(0.45);
+  background: #facc15;
+  opacity: 0.25;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.hit-spark.is-live {
+  opacity: 0.92;
+  transform: translateX(-50%) rotate(45deg) scale(0.8);
+}
+
+.guard-meter span {
+  background: #ec4899;
 }
 
 .city-grid {
@@ -1305,6 +1382,7 @@ input:focus-visible,
   .strategy-map,
   .racing-track,
   .sports-court,
+  .fighting-stage,
   .city-grid,
   .soulslike-stage,
   .puzzle-board {

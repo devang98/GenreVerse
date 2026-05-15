@@ -26,6 +26,7 @@ export function MiniDemo({ genre }: MiniDemoProps) {
         {genre.demoType === 'strategy' && <StrategyDemo />}
         {genre.demoType === 'racing' && <RacingDemo />}
         {genre.demoType === 'sports' && <SportsDemo />}
+        {genre.demoType === 'fighting' && <FightingDemo />}
         {genre.demoType === 'simulation' && <SimulationDemo />}
         {genre.demoType === 'soulslike' && <SoulslikeDemo />}
       </div>
@@ -284,6 +285,61 @@ function SportsDemo() {
           Shoot
         </button>
         <p className="demo-score">{shots === 0 ? 'Ready' : made ? 'Shot made' : 'Rim out'}</p>
+      </div>
+    </div>
+  );
+}
+
+function FightingDemo() {
+  const [range, setRange] = useState(54);
+  const [guard, setGuard] = useState(68);
+  const [combo, setCombo] = useState(0);
+  const inRange = range >= 42 && range <= 66;
+
+  function advance() {
+    setRange((value) => Math.min(88, value + 8));
+  }
+
+  function retreat() {
+    setRange((value) => Math.max(12, value - 8));
+    setGuard((value) => Math.min(100, value + 7));
+  }
+
+  function strike() {
+    if (!inRange) {
+      setCombo(0);
+      setGuard((value) => Math.max(0, value - 8));
+      return;
+    }
+
+    setCombo((value) => value + 1);
+    setGuard((value) => Math.max(0, value - 18));
+  }
+
+  return (
+    <div className="demo-stack">
+      <div className="fighting-stage">
+        <span className="fighter fighter-player" style={{ left: `${range - 28}%` }} />
+        <span className="fighter fighter-rival" style={{ left: `${range + 18}%` }} />
+        <span className={`hit-spark ${inRange ? 'is-live' : ''}`} />
+      </div>
+      <div>
+        <div className="meter guard-meter">
+          <span style={{ width: `${guard}%` }} />
+        </div>
+        <div className="demo-actions mt-3">
+          <button className="secondary-action" onClick={retreat} type="button">
+            Backstep
+          </button>
+          <button className="secondary-action" onClick={advance} type="button">
+            Step in
+          </button>
+          <button className="primary-action" onClick={strike} type="button">
+            <Zap size={18} aria-hidden="true" />
+            Strike
+          </button>
+          <p className="demo-score">{inRange ? `Combo: ${combo}` : 'Out of range'}</p>
+        </div>
       </div>
     </div>
   );

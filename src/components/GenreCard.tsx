@@ -10,6 +10,7 @@ import {
   Orbit,
   PersonStanding,
   Shield,
+  Swords,
 } from 'lucide-react';
 import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
@@ -27,6 +28,7 @@ const genreIcons: Record<string, typeof Gamepad2> = {
   strategy: Map,
   racing: Car,
   sports: Goal,
+  fighting: Swords,
   simulation: Orbit,
   soulslike: Shield,
 };

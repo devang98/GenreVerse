@@ -1,5 +1,7 @@
 import type { Genre } from '../types';
 
+const publicImage = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
 const commonSources = [
   {
     label: 'game-genre.pdf: local print of Wikipedia List of video game genres',
@@ -193,6 +195,28 @@ export const genres: Genre[] = [
       'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80',
   },
   {
+    id: 'fighting',
+    name: 'Fighting',
+    shortDescription:
+      'Competitive combat games about spacing, timing, reads, combos, and direct matchups.',
+    fullDescription:
+      'Fighting games focus on small-scale duels where every position, button, block, and whiff matters. Players learn move properties, manage distance, punish mistakes, and turn a single opening into a practiced combo or pressure sequence.',
+    playerFantasy:
+      'A tense duel of reads: the player wins by understanding both the character and the opponent.',
+    coreMechanics: ['Spacing', 'Blocking', 'Combos', 'Punishes', 'Frame advantage'],
+    famousGames: [
+      { title: 'Street Fighter II', year: 1991, note: 'Helped define modern competitive fighting game structure.' },
+      { title: 'Mortal Kombat', year: 1992, note: 'Made digitized characters and finishing moves culturally iconic.' },
+      { title: 'Tekken 3', year: 1997, note: 'A landmark 3D fighter built around movement, strings, and matchup knowledge.' },
+    ],
+    subgenres: ['2D fighter', '3D fighter', 'Platform fighter', 'Arena fighter'],
+    relatedTags: ['Versus', 'Arcade', 'Local multiplayer', 'Competitive'],
+    demoType: 'fighting',
+    sourceNotes: commonSources,
+    accent: '#ec4899',
+    imageUrl: publicImage('images/genre-fighting.svg'),
+  },
+  {
     id: 'simulation',
     name: 'Simulation',
     shortDescription:
@@ -212,7 +236,7 @@ export const genres: Genre[] = [
     demoType: 'simulation',
     sourceNotes: commonSources,
     accent: '#0ea5e9',
-    imageUrl: '/images/genre-simulation.svg',
+    imageUrl: publicImage('images/genre-simulation.svg'),
   },
   {
     id: 'soulslike',
@@ -240,7 +264,7 @@ export const genres: Genre[] = [
     demoType: 'soulslike',
     sourceNotes: soulslikeSources,
     accent: '#f43f5e',
-    imageUrl: '/images/genre-soulslike.svg',
+    imageUrl: publicImage('images/genre-soulslike.svg'),
   },
 ];
 

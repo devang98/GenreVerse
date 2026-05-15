@@ -5,6 +5,7 @@ import {
   ListChecks,
   Sparkles,
   Trophy,
+  Monitor,
 } from 'lucide-react';
 import type { CSSProperties } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
@@ -53,6 +54,37 @@ export function GenreDetail() {
 
       <section className="mx-auto grid max-w-7xl gap-6 px-5 py-10 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="space-y-6">
+          {/* Genre-level platform availability */}
+          {(() => {
+            const allPlatforms = new Set<string>();
+            genre.famousGames.forEach((game) => {
+              game.platforms?.forEach((p) => allPlatforms.add(p));
+            });
+            if (allPlatforms.size > 0) {
+              return (
+                <section className="content-panel">
+                  <h2>
+                    <Monitor size={22} aria-hidden="true" />
+                    Platform availability
+                  </h2>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {Array.from(allPlatforms)
+                      .sort()
+                      .map((platform) => (
+                        <span
+                          key={platform}
+                          className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg font-semibold text-sm"
+                        >
+                          {platform}
+                        </span>
+                      ))}
+                  </div>
+                </section>
+              );
+            }
+            return null;
+          })()}
+
           <section className="content-panel">
             <h2>
               <ListChecks size={22} aria-hidden="true" />
@@ -76,9 +108,21 @@ export function GenreDetail() {
             <div className="mt-5 grid gap-4">
               {genre.famousGames.map((game) => (
                 <div className="game-row" key={game.title}>
-                  <div>
+                  <div className="flex-1">
                     <p className="font-black text-slate-950">{game.title}</p>
                     <p className="mt-1 text-sm leading-6 text-slate-600">{game.note}</p>
+                    {game.platforms && game.platforms.length > 0 && (
+                      <div className="mt-2 flex flex-wrap gap-1">
+                        {game.platforms.map((platform) => (
+                          <span
+                            key={platform}
+                            className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-semibold"
+                          >
+                            {platform}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   <span>{game.year}</span>
                 </div>

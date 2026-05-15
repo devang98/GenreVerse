@@ -1,26 +1,83 @@
-import { Compass, Gamepad2, MousePointer2, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
+import { Compass, Gamepad2, MousePointer2, Search, SlidersHorizontal, Sparkles, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { GenreCard } from '../components/GenreCard';
 import { genres } from '../data/genres';
 
 const filters = ['All', 'Action', 'Planning', 'Systems', 'Precision'];
+const platforms = ['PlayStation', 'Xbox', 'PC', 'Mobile'];
 
 const filterMatcher: Record<string, (genreId: string) => boolean> = {
   All: () => true,
-  Action: (id) => ['platformer', 'shooter', 'racing', 'sports', 'fighting', 'soulslike'].includes(id),
-  Planning: (id) => ['puzzle', 'rpg', 'strategy', 'soulslike'].includes(id),
-  Systems: (id) => ['rpg', 'strategy', 'simulation', 'soulslike'].includes(id),
-  Precision: (id) => ['platformer', 'shooter', 'racing', 'sports', 'fighting', 'soulslike'].includes(id),
+  Action: (id) => [
+    'platformer',
+    'shooter',
+    'racing',
+    'sports',
+    'fighting',
+    'soulslike',
+    'roguelite',
+    'actionrpg',
+    'hacknslash',
+    'twinstickshooter',
+    'shmup',
+  ].includes(id),
+  Planning: (id) => [
+    'puzzle',
+    'rpg',
+    'strategy',
+    'soulslike',
+    'moba',
+    'tacticalrpg',
+    'turnbasedstrategy',
+    'realtimestrategy',
+  ].includes(id),
+  Systems: (id) => [
+    'rpg',
+    'strategy',
+    'simulation',
+    'soulslike',
+    'mmorpg',
+    'survival',
+    'deckbuilder',
+    'idleclicker',
+  ].includes(id),
+  Precision: (id) => [
+    'platformer',
+    'shooter',
+    'racing',
+    'sports',
+    'fighting',
+    'soulslike',
+    'rhythm',
+    'twinstickshooter',
+    'shmup',
+  ].includes(id),
 };
 
 export function Home() {
   const [query, setQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
+  const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
+
+  const togglePlatform = (platform: string) => {
+    setSelectedPlatforms((current) =>
+      current.includes(platform) ? current.filter((p) => p !== platform) : [...current, platform]
+    );
+  };
 
   const visibleGenres = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     return genres.filter((genre) => {
       const matchesFilter = filterMatcher[activeFilter](genre.id);
+      
+      // Platform filtering: if platforms are selected, genre must have games on at least one platform
+      let matchesPlatform = true;
+      if (selectedPlatforms.length > 0) {
+        matchesPlatform = genre.famousGames.some((game) =>
+          game.platforms?.some((p) => selectedPlatforms.includes(p))
+        );
+      }
+
       const searchable = [
         genre.name,
         genre.shortDescription,
@@ -30,13 +87,14 @@ export function Home() {
         genre.famousGames.map((game) => game.title).join(' '),
         genre.subgenres.join(' '),
         genre.relatedTags.join(' '),
+        genre.famousGames.flatMap((game) => game.platforms || []).join(' '),
       ]
         .join(' ')
         .toLowerCase();
 
-      return matchesFilter && (!normalized || searchable.includes(normalized));
+      return matchesFilter && matchesPlatform && (!normalized || searchable.includes(normalized));
     });
-  }, [activeFilter, query]);
+  }, [activeFilter, query, selectedPlatforms]);
 
   return (
     <>
@@ -112,6 +170,41 @@ export function Home() {
           </div>
         </div>
 
+        {/* Platform filter section */}
+        <div className="mt-6 flex flex-wrap items-center gap-2 pb-4 border-b border-white/10">
+          <span className="text-sm font-semibold text-slate-300">Platforms:</span>
+          {platforms.map((platform) => (
+            <button
+              key={platform}
+              className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                selectedPlatforms.includes(platform)
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              }`}
+              onClick={() => togglePlatform(platform)}
+              type="button"
+            >
+              {selectedPlatforms.includes(platform) ? (
+                <>
+                  ✓ {platform}
+                </>
+              ) : (
+                platform
+              )}
+            </button>
+          ))}
+          {selectedPlatforms.length > 0 && (
+            <button
+              className="ml-2 text-xs text-slate-400 hover:text-slate-200 flex items-center gap-1"
+              onClick={() => setSelectedPlatforms([])}
+              type="button"
+            >
+              <X size={14} aria-hidden="true" />
+              Clear
+            </button>
+          )}
+        </div>
+
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {visibleGenres.map((genre) => (
             <GenreCard genre={genre} key={genre.id} />
@@ -121,7 +214,7 @@ export function Home() {
         {visibleGenres.length === 0 && (
           <div className="py-20 text-center">
             <p className="text-lg font-bold text-white">No matching genre found.</p>
-            <p className="mt-2 text-slate-400">Try another mechanic, tag, or famous game.</p>
+            <p className="mt-2 text-slate-400">Try another mechanic, tag, famous game, or platform.</p>
           </div>
         )}
       </section>

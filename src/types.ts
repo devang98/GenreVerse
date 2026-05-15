@@ -8,12 +8,33 @@ export type DemoType =
   | 'fighting'
   | 'sports'
   | 'simulation'
-  | 'soulslike';
+  | 'soulslike'
+  | 'adventure'
+  | 'metroidvania'
+  | 'roguelike'
+  | 'roguelite'
+  | 'actionrpg'
+  | 'mmorpg'
+  | 'moba'
+  | 'cardgame'
+  | 'rhythm'
+  | 'survival'
+  | 'visualnovel'
+  | 'tacticalrpg'
+  | 'deckbuilder'
+  | 'turnbasedstrategy'
+  | 'realtimestrategy'
+  | 'idleclicker'
+  | 'dungeoncrawler'
+  | 'hacknslash'
+  | 'twinstickshooter'
+  | 'shmup';
 
 export type FamousGame = {
   title: string;
   year: number;
   note: string;
+  platforms?: string[];
 };
 
 export type SourceNote = {
@@ -33,6 +54,7 @@ export type Genre = {
   relatedTags: string[];
   demoType: DemoType;
   sourceNotes: SourceNote[];
+  platforms?: string[];
   accent: string;
   imageUrl: string;
 };

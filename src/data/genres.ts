@@ -332,8 +332,7 @@ export const genres: Genre[] = [
     demoType: 'roguelike',
     sourceNotes: commonSources,
     accent: '#f59e0b',
-    imageUrl:
-      'https://images.unsplash.com/photo-1538481143235-8d3c3f29f1a0?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: publicImage('images/genre-roguelike.svg'),
   },
   {
     id: 'roguelite',
@@ -355,8 +354,7 @@ export const genres: Genre[] = [
     demoType: 'roguelite',
     sourceNotes: commonSources,
     accent: '#ec4899',
-    imageUrl:
-      'https://images.unsplash.com/photo-1538481143235-8d3c3f29f1a0?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: publicImage('images/genre-roguelite.svg'),
   },
   {
     id: 'actionrpg',

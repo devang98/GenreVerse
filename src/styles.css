@@ -320,6 +320,27 @@ input:focus-visible,
   font-size: 0.9rem;
 }
 
+.platform-chip {
+  display: inline-flex;
+  min-height: 1.6rem;
+  align-items: center;
+  border: 1px solid color-mix(in srgb, var(--accent, #38bdf8) 36%, rgba(255, 255, 255, 0.14));
+  border-radius: 0.4rem;
+  background: color-mix(in srgb, var(--accent, #38bdf8) 18%, rgba(15, 23, 42, 0.88));
+  padding: 0 0.55rem;
+  color: #f8fafc;
+  font-size: 0.75rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.platform-chip-large {
+  min-height: 2rem;
+  border-radius: 0.5rem;
+  padding: 0 0.75rem;
+  font-size: 0.86rem;
+}
+
 .detail-hero {
   --accent: #38bdf8;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);

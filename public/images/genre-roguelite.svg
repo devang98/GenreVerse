@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Roguelite genre scene</title>
+  <desc id="desc">A neon action arena showing repeated runs, permanent upgrades, health, and branching power choices.</desc>
+  <defs>
+    <linearGradient id="arena" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#831843"/>
+      <stop offset="0.45" stop-color="#312e81"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <radialGradient id="core" cx="51%" cy="44%" r="54%">
+      <stop offset="0" stop-color="#f0abfc" stop-opacity="0.42"/>
+      <stop offset="0.5" stop-color="#ec4899" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#020617" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#arena)"/>
+  <rect width="1200" height="800" fill="url(#core)"/>
+  <g opacity="0.22" stroke="#f8fafc" stroke-width="4">
+    <path d="M0 590h1200"/>
+    <path d="M90 0 430 590M350 0 600 590M620 0 770 590M915 0 920 590M1160 0 1050 590"/>
+  </g>
+  <path d="M0 600c120-36 260-36 420 0 150 34 296 38 438 7 136-30 250-32 342-5v198H0Z" fill="#020617"/>
+  <g filter="url(#shadow)">
+    <path d="M230 554c22-94 82-150 166-150s146 56 168 150c-82 42-248 42-334 0Z" fill="#f8fafc"/>
+    <circle cx="396" cy="350" r="48" fill="#fbcfe8"/>
+    <path d="M350 414h92l28 144H322Z" fill="#ec4899"/>
+    <path d="M462 440 590 376" stroke="#f8fafc" stroke-width="24" stroke-linecap="round"/>
+    <path d="M320 463c-48 34-78 74-90 120" stroke="#f8fafc" stroke-width="24" stroke-linecap="round"/>
+    <path d="M480 584c34 34 84 54 150 58" stroke="#f8fafc" stroke-width="24" stroke-linecap="round"/>
+    <path d="M342 584c-36 36-82 58-138 64" stroke="#f8fafc" stroke-width="24" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="674" y="226" width="348" height="214" rx="28" fill="#020617" opacity="0.76"/>
+    <path d="M726 294h206" stroke="#f8fafc" stroke-width="16" stroke-linecap="round" opacity="0.72"/>
+    <path d="M726 350h254" stroke="#f472b6" stroke-width="16" stroke-linecap="round"/>
+    <path d="M726 398h156" stroke="#22c55e" stroke-width="16" stroke-linecap="round"/>
+    <circle cx="956" cy="294" r="24" fill="#f59e0b"/>
+    <circle cx="918" cy="398" r="24" fill="#38bdf8"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M740 540h72v72h-72Z" fill="#f8fafc"/>
+    <path d="M854 504h84v108h-84Z" fill="#f472b6"/>
+    <path d="M986 462h92v150h-92Z" fill="#22c55e"/>
+    <path d="M718 638h388" stroke="#f8fafc" stroke-width="12" stroke-linecap="round" opacity="0.68"/>
+    <path d="M770 576h258" stroke="#facc15" stroke-width="8" stroke-linecap="round" stroke-dasharray="20 22"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M502 172c40 0 72 32 72 72s-32 72-72 72-72-32-72-72h-48l72-72 72 72h-48c0 13 11 24 24 24s24-11 24-24-11-24-24-24Z" fill="#facc15"/>
+    <path d="M646 130h50v50h-50Zm0 80h50v50h-50Zm0 80h50v50h-50Z" fill="#f8fafc" opacity="0.86"/>
+  </g>
+  <path d="M140 704c162-35 310-14 452 0 172 17 314-28 470 0" fill="none" stroke="#ec4899" stroke-width="4" opacity="0.4"/>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Roguelike genre scene</title>
+  <desc id="desc">A tactical dungeon grid with a tiny adventurer, dice, treasure, traps, and branching rooms.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#451a03"/>
+      <stop offset="0.48" stop-color="#78350f"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <radialGradient id="torch" cx="50%" cy="52%" r="62%">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.44"/>
+      <stop offset="0.45" stop-color="#f97316" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#020617" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#wall)"/>
+  <rect width="1200" height="800" fill="url(#torch)"/>
+  <g opacity="0.18" stroke="#fde68a" stroke-width="4">
+    <path d="M0 128h1200M0 256h1200M0 384h1200M0 512h1200M0 640h1200"/>
+    <path d="M120 0v800M240 0v800M360 0v800M480 0v800M600 0v800M720 0v800M840 0v800M960 0v800M1080 0v800"/>
+  </g>
+  <path d="M0 646c174-40 326-44 456-14 148 35 282 38 432 3 112-26 214-29 312-8v173H0Z" fill="#020617"/>
+  <g filter="url(#shadow)">
+    <path d="M248 186h704v420H248Z" fill="#0f172a" opacity="0.88"/>
+    <path d="M318 256h142v92H318Zm210 0h142v92H528Zm210 0h142v92H738ZM318 424h142v92H318Zm210 0h142v92H528Zm210 0h142v92H738Z" fill="#1f2937"/>
+    <path d="M460 302h68M670 302h68M460 470h68M670 470h68" stroke="#f59e0b" stroke-width="18" stroke-linecap="round"/>
+    <path d="M246 604h708" stroke="#92400e" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#shadow)">
+    <circle cx="392" cy="474" r="34" fill="#f8fafc"/>
+    <path d="M354 548c10-50 34-76 38-76s30 26 42 76c-28 18-54 18-80 0Z" fill="#38bdf8"/>
+    <path d="m430 493 68-58" stroke="#e2e8f0" stroke-width="12" stroke-linecap="round"/>
+    <path d="m504 429 30-12-13 29Z" fill="#f8fafc"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="770" y="414" width="92" height="92" rx="14" fill="#f8fafc"/>
+    <circle cx="798" cy="442" r="8" fill="#0f172a"/>
+    <circle cx="834" cy="442" r="8" fill="#0f172a"/>
+    <circle cx="798" cy="478" r="8" fill="#0f172a"/>
+    <circle cx="834" cy="478" r="8" fill="#0f172a"/>
+    <path d="M560 292h86l20 46h-126Z" fill="#fbbf24"/>
+    <path d="M554 340h118v76H554Z" fill="#92400e"/>
+    <path d="M548 340h130" stroke="#fde68a" stroke-width="14" stroke-linecap="round"/>
+    <path d="m812 292 28 52 58 9-42 41 10 58-54-28-52 28 10-58-42-41 58-9Z" fill="#f43f5e"/>
+  </g>
+  <g opacity="0.72" stroke="#f8fafc" stroke-linecap="round" stroke-width="7">
+    <path d="m314 326 44 44M358 326l-44 44"/>
+    <path d="m740 292 34 34M774 292l-34 34"/>
+    <path d="m594 492 42 42M636 492l-42 42"/>
+  </g>
+</svg>

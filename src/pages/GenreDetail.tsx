@@ -73,7 +73,7 @@ export function GenreDetail() {
                       .map((platform) => (
                         <span
                           key={platform}
-                          className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg font-semibold text-sm"
+                          className="platform-chip platform-chip-large"
                         >
                           {platform}
                         </span>
@@ -116,7 +116,7 @@ export function GenreDetail() {
                         {game.platforms.map((platform) => (
                           <span
                             key={platform}
-                            className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-semibold"
+                            className="platform-chip"
                           >
                             {platform}
                           </span>

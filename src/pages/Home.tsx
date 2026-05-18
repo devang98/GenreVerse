@@ -1,4 +1,4 @@
-import { Compass, Gamepad2, MousePointer2, Search, SlidersHorizontal, Sparkles, X } from 'lucide-react';
+import { Check, Compass, Gamepad2, MousePointer2, Search, SlidersHorizontal, Sparkles, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { GenreCard } from '../components/GenreCard';
 import { genres } from '../data/genres';
@@ -102,10 +102,10 @@ export function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.02fr_0.98fr] md:items-center md:py-20">
           <div className="relative z-10">
             <p className="eyebrow mb-6">Playable taxonomy</p>
-            <h1 className="font-display max-w-4xl text-5xl font-black uppercase leading-[1.02] text-slate-950 md:text-7xl lg:text-8xl">
+            <h1 className="font-display max-w-4xl text-5xl font-black uppercase leading-[1.02] text-white md:text-7xl lg:text-8xl">
               Explore game genres by feel, rules, and play.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700 md:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl">
               GenreVerse is a hands-on guide to the major ways games ask people to move, aim,
               solve, plan, compete, and build. Each entry pairs clear taxonomy notes with a focused
               mini interaction.
@@ -129,11 +129,40 @@ export function Home() {
             </div>
           </div>
 
-          <div className="hero-media" aria-label="Gaming setup image">
+          <div className="hero-media" aria-label="3D gameplay taxonomy scene">
             <img
               alt="Neon-lit gaming controller and arcade setup"
+              className="hero-media-image"
               src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1400&q=80"
             />
+            <div className="hero-object-field" aria-hidden="true">
+              <span className="hero-cube hero-cube-one" />
+              <span className="hero-cube hero-cube-two" />
+              <span className="hero-cube hero-cube-three" />
+              <span className="hero-ring hero-ring-one" />
+              <span className="hero-ring hero-ring-two" />
+            </div>
+            <div className="hero-3d-scene hero-3d-scene-subtle" aria-hidden="true">
+              <div className="hero-controller">
+                <span className="controller-grip controller-grip-left" />
+                <span className="controller-grip controller-grip-right" />
+                <span className="controller-stick controller-stick-left" />
+                <span className="controller-stick controller-stick-right" />
+                <span className="controller-pad">
+                  <i />
+                  <i />
+                </span>
+                <span className="controller-button button-a" />
+                <span className="controller-button button-b" />
+                <span className="controller-button button-c" />
+                <span className="controller-button button-d" />
+              </div>
+              <div className="hero-genre-stack">
+                <span>Action</span>
+                <span>Systems</span>
+                <span>Precision</span>
+              </div>
+            </div>
             <div className="hero-media-card">
               <Sparkles size={18} aria-hidden="true" />
               <span>Search by mechanic, famous game, or mood tag</span>
@@ -176,9 +205,9 @@ export function Home() {
           {platforms.map((platform) => (
             <button
               key={platform}
-              className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+              className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1 text-xs font-medium transition-colors ${
                 selectedPlatforms.includes(platform)
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-paintball-primary text-white'
                   : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
               }`}
               onClick={() => togglePlatform(platform)}
@@ -186,7 +215,7 @@ export function Home() {
             >
               {selectedPlatforms.includes(platform) ? (
                 <>
-                  ✓ {platform}
+                  <Check size={13} aria-hidden="true" /> {platform}
                 </>
               ) : (
                 platform

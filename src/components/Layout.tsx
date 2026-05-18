@@ -1,6 +1,7 @@
 import { Gamepad2, Library, ScrollText } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
+import { ChatBot } from './ChatBot';
 
 type LayoutProps = {
   children: ReactNode;
@@ -8,11 +9,11 @@ type LayoutProps = {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-[#09090b] text-slate-200">
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#09090b]/80 backdrop-blur-xl">
+    <div className="min-h-screen bg-paintball-secondary text-slate-200">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-paintball-secondary/90 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
-          <NavLink className="flex items-center gap-3 font-display font-black uppercase tracking-widest text-white" to="/">
-            <span className="grid h-10 w-10 place-items-center rounded-md bg-white text-[#09090b]">
+          <NavLink className="flex items-center gap-3 font-display font-black tracking-widest text-white hover:text-paintball-primary transition-colors" to="/">
+            <span className="grid h-10 w-10 place-items-center rounded-md bg-paintball-primary text-white">
               <Gamepad2 size={22} aria-hidden="true" />
             </span>
             <span>GenreVerse</span>
@@ -45,6 +46,8 @@ export function Layout({ children }: LayoutProps) {
           <p>References: local PDF, Wikipedia, MobyGames, and IGDB.</p>
         </div>
       </footer>
+
+      <ChatBot />
     </div>
   );
 }

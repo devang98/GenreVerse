@@ -12,6 +12,7 @@ The project treats genres as gameplay-centered categories. Themes and presentati
 - Mini playable demos for core mechanics such as jumping, target clicking, tile swapping, dialogue choices, unit selection, lane changes, timing shots, fighting range control, simulation sliders, soulslike stamina/recovery, deck tuning, resource loops, and formation planning
 - Genre detail pages with overview, player fantasy, core mechanics, famous games, subgenres, related tags, and references
 - Taxonomy notes page explaining the gameplay-first classification model
+- AI genre guide chatbot for genre questions, comparisons, and recommendations
 - Accessible keyboard focus states and responsive layouts for mobile, tablet, and desktop
 
 ## Tech Stack
@@ -22,6 +23,8 @@ The project treats genres as gameplay-centered categories. Themes and presentati
 - React Router
 - Tailwind CSS
 - Lucide React icons
+- OpenAI Responses API
+- Vercel serverless functions
 
 ## Getting Started
 
@@ -49,6 +52,24 @@ Preview the production build:
 npm run preview
 ```
 
+## Chatbot Setup
+
+The floating GenreVerse chatbot uses a Vercel serverless function at `/api/chat` so the OpenAI API key is never exposed in the browser bundle. GitHub Pages can still host the static app, but it cannot securely run the chatbot by itself because it has no private server environment.
+
+For Vercel deployment, set this environment variable:
+
+```sh
+OPENAI_API_KEY="your_api_key_here"
+```
+
+Optional:
+
+```sh
+OPENAI_MODEL="gpt-5-mini"
+```
+
+The default model is `gpt-5-mini`. The chat history is stored in browser session storage only.
+
 ## Available Scripts
 
 - `npm run dev` starts Vite for local development.
@@ -59,11 +80,17 @@ npm run preview
 ## Project Structure
 
 ```text
+api/
+  chat.ts
+  genre-context.ts
 src/
   components/
+    ChatBot.tsx
     GenreCard.tsx
     Layout.tsx
     MiniDemo.tsx
+  types/
+    chat.ts
   data/
     genres.ts
   pages/

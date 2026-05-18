@@ -499,7 +499,7 @@ function SoulslikeDemo() {
 }
 
 function AdventureDemo() {
-  const [inventory, setInventory] = useState(['Map', 'Key']);
+  const inventory = ['Map', 'Key'];
   const [message, setMessage] = useState('Examine the strange door ahead.');
   const items = ['Map', 'Key', 'Torch', 'Compass'];
 
@@ -593,6 +593,7 @@ function RoguelikeDemo() {
       <div className="roguelike-dungeon" style={{ opacity: 0.8 }}>
         <p className="text-center font-bold">Floor {floor}</p>
         <p className="text-center text-sm">Enemies: {floor * 2 - 1}</p>
+        <p className="text-center text-sm">Items: {items.join(', ')}</p>
       </div>
       <div className="demo-actions">
         <button className="primary-action" onClick={descend} type="button">
@@ -829,6 +830,7 @@ function CardGameDemo() {
 function RhythmDemo() {
   const [score, setScore] = useState(0);
   const [beat, setBeat] = useState(0);
+  const [feedback, setFeedback] = useState('Ready');
   const beats = ['Perfect!', 'Good', 'Okay', 'Miss'];
 
   function hitBeat() {
@@ -847,6 +849,7 @@ function RhythmDemo() {
     }
     setScore((s) => s + points);
     setBeat((b) => b + 1);
+    setFeedback(result);
   }
 
   return (
@@ -854,6 +857,7 @@ function RhythmDemo() {
       <div className="rhythm-display">
         <p className="text-center font-bold text-2xl">♪ ♪ ♪</p>
         <p className="text-center text-sm mt-2">{beats[Math.floor(Math.random() * 4)]}</p>
+        <p className="text-center text-sm mt-2">{feedback}</p>
       </div>
       <div className="demo-actions">
         <button className="primary-action" onClick={hitBeat} type="button">
@@ -930,7 +934,7 @@ function VisualNovelDemo() {
     { text: 'Your journey continues...', choices: ['Next', 'End'] },
   ];
 
-  function choose(index: number) {
+  function choose() {
     if (scene < scenes.length - 1) {
       setScene((s) => s + 1);
     }
@@ -941,8 +945,8 @@ function VisualNovelDemo() {
       <div className="visual-novel-window">
         <p className="text-lg font-bold text-slate-950">{scenes[scene].text}</p>
         <div className="mt-5 grid gap-2">
-          {scenes[scene].choices.map((choice, i) => (
-            <button key={choice} className="choice-button choice-button-active" onClick={() => choose(i)} type="button">
+          {scenes[scene].choices.map((choice) => (
+            <button key={choice} className="choice-button choice-button-active" onClick={choose} type="button">
               {choice}
             </button>
           ))}
@@ -997,10 +1001,6 @@ function DeckBuilderDemo() {
     if (deck.length < 20) {
       setDeck([...deck, card]);
     }
-  }
-
-  function removeCard(index: number) {
-    setDeck(deck.filter((_, i) => i !== index));
   }
 
   return (
@@ -1254,6 +1254,12 @@ function TwinStickShooterDemo() {
         </button>
         <button className="secondary-action" onClick={() => setX(Math.min(90, x + 10))} type="button">
           Move →
+        </button>
+        <button className="secondary-action" onClick={() => setY(Math.max(20, y - 10))} type="button">
+          ↑ Move
+        </button>
+        <button className="secondary-action" onClick={() => setY(Math.min(80, y + 10))} type="button">
+          Move ↓
         </button>
         <button className="primary-action" onClick={shoot} type="button">
           <Zap size={18} aria-hidden="true" />
